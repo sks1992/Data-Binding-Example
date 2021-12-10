@@ -26,4 +26,35 @@ the use of @{} syntax in the assignment expression:
     <TextView
     android:text="@{viewmodel.userName}" />
 
+
+To enabled Data Binding in build.gradle
+
+android {
+    ...
+    buildFeatures {
+    dataBinding true
+    }
+}
+
+
+To convert a regular layout to Data Binding layout:
+
+Wrap your layout with a <layout> tag
+Add layout variables (optional)
+Add layout expressions (optional)
+
+
+Layout variables are used to write layout expressions. Layout expressions are placed in the value
+of element attributes and they use the @{expression} format. Here are some examples:
+
+
+// Some examples of complex layout expressions
+android:text="@{String.valueOf(index + 1)}"
+android:visibility="@{age < 13 ? View.GONE : View.VISIBLE}"
+android:transitionName='@{"image_" + id}'
+
+The layout expression language gives you a lot of power, but it is best to avoid nesting complex
+logic inside views. Complex expressions will make your layout harder to read and maintain.
+
+
  * */
