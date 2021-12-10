@@ -32,8 +32,9 @@ class ProfileActivity : AppCompatActivity() {
             this, R.layout.activity_profile
         )
 
-        binding.name ="Mahesh"
-        binding.lastName ="Kumar"
+        binding.viewmodel = viewModel
+        /*binding.name ="Mahesh"
+        binding.lastName ="Kumar"*/
 
         // TODO: Explicitly setting initial values is a bad pattern. We'll fix that.
         updateName()
