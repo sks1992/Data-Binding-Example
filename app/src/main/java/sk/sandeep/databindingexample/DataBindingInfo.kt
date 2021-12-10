@@ -56,5 +56,24 @@ android:transitionName='@{"image_" + id}'
 The layout expression language gives you a lot of power, but it is best to avoid nesting complex
 logic inside views. Complex expressions will make your layout harder to read and maintain.
 
+<data>
+<variable
+name="viewmodel"
+type="com.example.android.databinding.basicsample.data.SimpleViewModel"/>
+</data>
 
+
+<TextView
+android:id="@+id/plain_name"
+android:text="@{viewmodel.name}"
+... />
+<TextView
+android:id="@+id/plain_lastname"
+android:text="@{viewmodel.lastName}"
+... />
+
+android:onClick="@{() -> viewmodel.onLike()}"
+
+
+binding.viewmodel = viewModel
  * */
